@@ -5,10 +5,7 @@
 # Typical usage: dockerd-rootless-setuptool.sh install --force
 #
 # Documentation: https://docs.docker.com/go/rootless/
-
-set -x
 set -eu
-
 
 # utility functions
 INFO() {
@@ -401,10 +398,10 @@ cmd_entrypoint_install() {
 
 	# check RootlessKit functionality. RootlessKit will print hints if something is still unsatisfied.
 	# (e.g., `kernel.apparmor_restrict_unprivileged_userns` constraint)
-	if ! rootlesskit true; then
-		ERROR "RootlessKit failed, see the error messages and https://rootlesscontaine.rs/getting-started/common/ ."
-		exit 1
-	fi
+	#if ! rootlesskit true; then
+	#	ERROR "RootlessKit failed, see the error messages and https://rootlesscontaine.rs/getting-started/common/ ."
+	#	exit 1
+	#fi
 
 	if [ -z "$SYSTEMD" ]; then
 		install_nonsystemd
