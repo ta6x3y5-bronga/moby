@@ -5,7 +5,10 @@
 # Typical usage: dockerd-rootless-setuptool.sh install --force
 #
 # Documentation: https://docs.docker.com/go/rootless/
+
+set -x
 set -eu
+
 
 # utility functions
 INFO() {
